@@ -1,0 +1,72 @@
+sample data and updated two Cpp files
+
+sample parameters: see the following 
+
+Dataset:
+2 - ADNI BASELINE
+3 - ADNI FOLLOWUP
+3
+
+ADNI FOLLOWUP
+Volume # (1-10) = 1
+Volume # (1-10) = 1
+Image: data/S.img
+READ: unsigned short int: 2 byte ( 16 bit ) data.
+MAX = 255, MIN = 0, max = 255, min = 0
+Volume # (1-10) = 1
+Image: data/T.img
+READ: unsigned short int: 2 byte ( 16 bit ) data.
+MAX = 255, MIN = 0, max = 255, min = 0
+MAX = 255, MIN = 0, max = 255, min = 0
+MAX = 255, MIN = 0, max = 255, min = 0
+WRITE: unsigned short: 2 byte ( 16 bit ) data.
+WRITE: unsigned short: 2 byte ( 16 bit ) data.
+Fidelity:
+1 = L2
+2 = MI
+2
+Smoothing:
+1 = Gaussian
+2 = Heat equation
+3 = Stationary NS
+1
+Standard deviation std (e.g. 4.5):
+4.5
+1
+
+Number of TimeSteps:
+10
+Output Every nth Step:
+10
+WRITE: unsigned short: 2 byte ( 16 bit ) data.
+MI = 0.561655   dt = 0.240722  time = 0.240722   1 1
+
+
+
+MI = 0.56379   dt = 0.241035  time = 0.481757   0.9809 1.027
+MI = 0.565194   dt = 0.242369  time = 0.724126   0.962048 1.05513
+
+
+
+
+
+MI = 0.566637   dt = 0.242614  time = 0.96674   0.943527 1.08472
+MI = 0.568149   dt = 0.243216  time = 1.20996   0.92546 1.11527
+MI = 0.569954   dt = 0.242514  time = 1.45247   0.907884 1.14722
+MI = 0.571928   dt = 0.241035  time = 1.6935   0.890797 1.18015
+MI = 0.573869   dt = 0.239927  time = 1.93343   0.874271 1.21406
+MI = 0.575733   dt = 0.237617  time = 2.17105   0.858185 1.24879
+MI = 0.577547   dt = 0.235251  time = 2.4063   0.842618 1.28391
+Step 10
+WRITE: unsigned short: 2 byte ( 16 bit ) data.
+WRITE: unsigned short: 2 byte ( 16 bit ) data.
+WRITE: unsigned short: 2 byte ( 16 bit ) data.
+WRITE: unsigned short: 2 byte ( 16 bit ) data.
+WRITE: unsigned short: 2 byte ( 16 bit ) data.
+WRITE: unsigned short: 2 byte ( 16 bit ) data.
+
+0 regrids.
+
+Filtering time  : 638367 milliseconds.  (timeb.h)
+Filtering time  : 638.367 seconds.      (timeb.h)
+
