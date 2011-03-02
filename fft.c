@@ -1,4 +1,5 @@
 #include "fft.h"
+#include "fft_array.h"
 
 static void permute_bitrev(float Are[IMAX], float Aim[IMAX])
 {
@@ -28,7 +29,7 @@ static void permute_bitrev(float Are[IMAX], float Aim[IMAX])
 }
 
 static void fft(float A_re[IMAX], float A_im[IMAX], const float W_re[IMAX >> 1],
-	 const float W_im[IMAX >> 1], int pp)
+		const float W_im[IMAX >> 1], int pp)
 {
 	float w_re, w_im, u_re, u_im, t_re, t_im;
 	int mm, g, b;

@@ -1,4 +1,5 @@
 #include "convolution2d.h"
+#include "convolution2d_array.h"
 #include "fft.h"
 
 void convolution2D(float Are[IMAX][IMAX])
