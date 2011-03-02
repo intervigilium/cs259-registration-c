@@ -114,4 +114,6 @@ int main(int argc, char *argv[])
 	gettimeofday(&b, 0);
 	printf("End\r\n");
 	printf("Seconds is %d\r\n", (b.tv_sec - a.tv_sec));
+
+	return 0;
 }
