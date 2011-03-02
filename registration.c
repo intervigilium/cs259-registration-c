@@ -51,12 +51,12 @@ void V_cal(float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
 		//filter left
 		for (counter = 0; counter < M; counter++)
 			for (i = 0; i < N; i++) {
-				V1[counter][i][p - 1] =
-				    V1[counter][i][p - 1] * BoundaryScale;
-				V2[counter][i][p - 1] =
-				    V2[counter][i][p - 1] * BoundaryScale;
-				V3[counter][i][p - 1] =
-				    V3[counter][i][p - 1] * BoundaryScale;
+				V1[counter][i][P - 1] =
+				    V1[counter][i][P - 1] * BoundaryScale;
+				V2[counter][i][P - 1] =
+				    V2[counter][i][P - 1] * BoundaryScale;
+				V3[counter][i][P - 1] =
+				    V3[counter][i][P - 1] * BoundaryScale;
 			}
 		for (counter = 0; counter < M; counter++)
 			for (j = P - 2; j >= 0; j--)
@@ -84,7 +84,7 @@ void V_cal(float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
 			}
 		for (counter = 0; counter < M; counter++)
 			for (i = 1; i < N; i++)
-				for (j = 0; j < p; j++) {
+				for (j = 0; j < P; j++) {
 					V1[counter][i][j] =
 					    V1[counter][i][j] + V1[counter][i -
 									    1]
@@ -102,12 +102,12 @@ void V_cal(float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
 		//filter up 
 		for (counter = 0; counter < M; counter++)
 			for (j = 0; j < P; j++) {
-				V1[counter][n - 1][j] =
-				    V1[counter][n - 1][j] * BoundaryScale;
-				V2[counter][n - 1][j] =
-				    V2[counter][n - 1][j] * BoundaryScale;
-				V3[counter][n - 1][j] =
-				    V3[counter][n - 1][j] * BoundaryScale;
+				V1[counter][N - 1][j] =
+				    V1[counter][N - 1][j] * BoundaryScale;
+				V2[counter][N - 1][j] =
+				    V2[counter][N - 1][j] * BoundaryScale;
+				V3[counter][N - 1][j] =
+				    V3[counter][N - 1][j] * BoundaryScale;
 			}
 		for (counter = 0; counter < M; counter++)
 			for (i = N - 2; i >= 0; i--)
@@ -153,12 +153,12 @@ void V_cal(float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
 		//filter out 
 		for (i = 0; i < N; i++)
 			for (j = 0; j < P; j++) {
-				V1[m - 1][i][j] =
-				    V1[m - 1][i][j] * BoundaryScale;
+				V1[M - 1][i][j] =
+				    V1[M - 1][i][j] * BoundaryScale;
 				V2[m - 1][i][j] =
-				    V2[m - 1][i][j] * BoundaryScale;
+				    V2[M - 1][i][j] * BoundaryScale;
 				V3[m - 1][i][j] =
-				    V3[m - 1][i][j] * BoundaryScale;
+				    V3[M - 1][i][j] * BoundaryScale;
 			}
 		for (counter = M - 2; counter >= 0; counter--)
 			for (i = 0; i < N; i++)
@@ -188,7 +188,7 @@ void V_cal(float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
 }
 
 void interp(float U1[M][N][P], float U2[M][N][P], float U3[M][N][P],
-	    float interpT[M][N][P])
+	    float interpT[M][N][P], float T[M][N][P])
 {
 	int i, j, k;
 	for (i = 1; i < M - 1; i++)
