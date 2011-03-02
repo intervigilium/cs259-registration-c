@@ -1,17 +1,23 @@
 # Makefile
 
 CC=gcc
-SRC=reg_vec_mi.c
+SRC=convolution2d.c fft.c registration.c main.c
+OBJ=${${SRC}=%.o}
 OUT=registration
 
 PAPIDIR=/mnt/jc5/CS259/papi
-INCLUDEDIR=-I${PAPIDIR}
 
+INCFLAGS=-I${PAPIDIR}
 CFLAGS=-g -pg
 LDFLAGS=-L${PAPIDIR} -lm -lpapi -lutil_papi
 
-all:
-	${CC} ${CFLAGS} ${INCLUDEDIR} ${SRC} -o ${OUT} ${LDFLAGS}
+default: bin
+
+bin: ${OBJ}
+	${CC} ${CFLAGS} ${INCFLAGS} ${OBJ} -o ${OUT} ${LDFLAGS}
+
+${%.o}: ${SRC}
+	${CC} ${CFLAGS} ${INCFLAGS} -c $< -o $@
 
 clean:
-	rm ${OUT}
+	rm ${OUT} ${OBJ}
