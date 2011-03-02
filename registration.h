@@ -1,4 +1,5 @@
-#include <stdlib.h>
+#ifndef _REGISTRATION_H
+#define _REGISTRATION_H
 
 #define EPS 1e-6f
 
@@ -16,3 +17,5 @@ void U_cal();
 void interp();
 
 void computeMI();
+
+#endif

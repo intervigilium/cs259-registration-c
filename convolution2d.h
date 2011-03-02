@@ -1,4 +1,6 @@
-#include <stdlib.h>
+#ifndef _CONVOLUTION2D_H
+#define _CONVOLUTION2D_H
+
 #include "registration.h"
 
 const float Bre[Imax][Imax] = {
@@ -8036,3 +8038,5 @@ const float Bim[Imax][Imax] = {
 };
 
 void convolution2D(float Are[IMAX][IMAX]);
+
+#endif

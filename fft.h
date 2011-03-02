@@ -1,4 +1,6 @@
-#include <stdlib.h>
+#ifndef _FFT_H
+#define _FFT_H
+
 #include "registration.h"
 
 const float Wre[IMAX / 2] = {
@@ -45,3 +47,5 @@ void fft(float A_re[IMAX], float A_im[IMAX], const float W_re[IMAX >> 1],
 	 const float W_im[IMAX >> 1], int pp);
 
 void fft2D(float Are[IMAX][IMAX], float Aim[IMAX][IMAX], int pp);
+
+#endif
