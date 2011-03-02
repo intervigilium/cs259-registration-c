@@ -103,10 +103,10 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < NumIter; i++) {
 		printf("iteration  %d\r\n", i);
-		interp();
-		computeMI();
-		V_cal();
-		U_cal();
+		interp(U1, U2, U3, interpT, T);
+		computeMI(V1, V2, V3, interpT, S);
+		V_cal(V1, V2, V3);
+		U_cal(U1, U2, U3, V1, V2, V3);
 	}
 	util_stop_papi(g_batchid, papi_values);
 	util_print_papi(g_batchid, papi_values, (g_batchid == 0));
