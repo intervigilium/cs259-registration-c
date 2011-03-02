@@ -10,12 +10,18 @@
 #define GAUSSIAN_STEP 3
 #define IMAX 128
 
-void V_cal();
+void V_cal(float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
+	   float V3[M + 1][N + 1][P + 1]);
 
-void U_cal();
+void U_cal(float U1[M][N][P], float U2[M][N][P], float U3[M][N][P],
+	   float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
+	   float V3[M + 1][N + 1][P + 1]);
 
-void interp();
+void interp(float U1[M][N][P], float U2[M][N][P], float U3[M][N][P],
+	    float interpT[M][N][P]);
 
-void computeMI();
+void computeMI(float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
+	       V3[M + 1][N + 1][P + 1], float interpT[M][N][P],
+	       float S[M][N][P]);
 
 #endif
