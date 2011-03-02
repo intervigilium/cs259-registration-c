@@ -155,9 +155,9 @@ void V_cal(float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
 			for (j = 0; j < P; j++) {
 				V1[M - 1][i][j] =
 				    V1[M - 1][i][j] * BoundaryScale;
-				V2[m - 1][i][j] =
+				V2[M - 1][i][j] =
 				    V2[M - 1][i][j] * BoundaryScale;
-				V3[m - 1][i][j] =
+				V3[M - 1][i][j] =
 				    V3[M - 1][i][j] * BoundaryScale;
 			}
 		for (counter = M - 2; counter >= 0; counter--)
