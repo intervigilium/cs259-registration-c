@@ -1,4 +1,5 @@
 data/*
+*.o
 *.out
 data.tar.gz
 registration
