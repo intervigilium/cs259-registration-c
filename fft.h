@@ -41,9 +41,6 @@ static const float Wim_c[IMAX / 2] = {
 	-0.671559, -0.740951, -0.998795, -0.0490677
 };
 
-void fft(float A_re[IMAX], float A_im[IMAX], const float W_re[IMAX >> 1],
-	 const float W_im[IMAX >> 1], int pp);
-
 void fft2D(float Are[IMAX][IMAX], float Aim[IMAX][IMAX], int pp);
 
 #endif
