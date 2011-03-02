@@ -1,8 +1,4 @@
-#include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
-#include <time.h>
-#include <sys/time.h>
 #include <math.h>
 #include "registration.h"
 #include "convolution2d.h"
