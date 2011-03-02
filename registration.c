@@ -5,6 +5,7 @@
 #include <sys/time.h>
 #include <math.h>
 #include "registration.h"
+#include "convolution2d.h"
 
 void V_cal(float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
 	   float V3[M + 1][N + 1][P + 1])
