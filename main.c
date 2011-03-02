@@ -6,7 +6,7 @@
 #include "papi.h"
 #include "registration.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	if (argc < 2) {
 		printf("execute using ./a.out NumIter\r\n");
