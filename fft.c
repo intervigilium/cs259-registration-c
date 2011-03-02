@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "fft.h"
 
 static void permute_bitrev(float Are[IMAX], float Aim[IMAX])
