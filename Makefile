@@ -16,7 +16,7 @@ default: $(OUT)
 $(OUT): $(OBJ)
 	$(CC) $(CFLAGS) $(INCFLAGS) -o $@ $^ $(LDFLAGS)
 
-%.o: $(SRC)
+.c.o: $(SRC)
 	$(CC) $(CFLAGS) $(INCFLAGS) -c $< -o $@
 
 clean:
