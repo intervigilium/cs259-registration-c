@@ -4,7 +4,7 @@
 #include <time.h>
 #include <sys/time.h>
 #include <math.h>
-#include "papi.h"
+#include "registration.h"
 
 void V_cal(float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
 	   float V3[M + 1][N + 1][P + 1])
