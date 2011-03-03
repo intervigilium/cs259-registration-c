@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 		return 0;
 	}
 
-	while ((c = getopt(argc, argv, "vhbn:")) != -1) {
+	while ((c = getopt(argc, argv, "vhb:n:")) != -1) {
                 switch (c) {
                         case 'v':
                         case 'h':
@@ -53,9 +53,12 @@ int main(int argc, char **argv)
                                 iterations = atoi(optarg);
                                 break;
                         case 'b':
-                                g_batchid = atoi(optarg);
+				sscanf(optarg, "%u", &g_batchid);
+				break;
                 }
         }
+
+	printf("Batch ID: %d\n", g_batchid);
 
 	S_ptr = fopen("data/S.img", "rb");
 	if (S_ptr == NULL) {
@@ -109,7 +112,6 @@ int main(int argc, char **argv)
 		}
 	}
 
-	printf("Batch ID: %d\n", g_batchid);
 	printf("Starting...\n");
 	struct timeval a;
 	struct timeval b;
