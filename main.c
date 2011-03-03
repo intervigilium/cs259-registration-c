@@ -6,25 +6,25 @@
 #include "papi.h"
 #include "registration.h"
 
+static float S[M][N][P];
+static float T[M][N][P];
+
+static float U1[M][N][P];
+static float U2[M][N][P];
+static float U3[M][N][P];
+
+static float V1[M + 1][N + 1][P + 1];
+static float V2[M + 1][N + 1][P + 1];
+static float V3[M + 1][N + 1][P + 1];
+
+static float interpT[M][N][P];
+
 int main(int argc, char **argv)
 {
 	if (argc < 2) {
 		printf("execute using ./a.out NumIter\r\n");
 		exit(0);
 	}
-
-	float S[M][N][P];
-	float T[M][N][P];
-
-	float U1[M][N][P];
-	float U2[M][N][P];
-	float U3[M][N][P];
-
-	float V1[M + 1][N + 1][P + 1];
-	float V2[M + 1][N + 1][P + 1];
-	float V3[M + 1][N + 1][P + 1];
-
-	float interpT[M][N][P];
 
 	int NumIter = atoi(argv[1]);
 
