@@ -109,7 +109,8 @@ int main(int argc, char **argv)
 		}
 	}
 
-	printf("Begin \r\n");
+	printf("Batch ID: %d\n", g_batchid);
+	printf("Starting...\n");
 	struct timeval a;
 	struct timeval b;
 	gettimeofday(&a, 0);
@@ -118,7 +119,7 @@ int main(int argc, char **argv)
 	util_start_papi(g_batchid, Events);
 
 	for (i = 0; i < iterations; i++) {
-		printf("iteration  %d\r\n", i);
+		printf("Iteration: %d\n", i);
 		interp(U1, U2, U3, interpT, T);
 		computeMI(V1, V2, V3, interpT, S);
 		V_cal(V1, V2, V3);
@@ -128,8 +129,8 @@ int main(int argc, char **argv)
 	util_print_papi(g_batchid, papi_values, (g_batchid == 0));
 
 	gettimeofday(&b, 0);
-	printf("End\r\n");
-	printf("Seconds is %d\r\n", (b.tv_sec - a.tv_sec));
+	printf("Finished\n");
+	printf("Seconds: %d\n", (b.tv_sec - a.tv_sec));
 
 	return 0;
 }
