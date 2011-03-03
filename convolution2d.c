@@ -1,7 +1,7 @@
 #include "convolution2d.h"
 #include "fft.h"
 
-void convolution2D(float Are[IMAX][IMAX])
+void convolution2D(float Are[][])
 {
 	const float Bre[IMAX][IMAX] = {
 		0, 1.7053e-08, -2.3109e-08, 3.5344e-08, -5.37871e-08,

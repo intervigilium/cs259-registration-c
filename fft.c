@@ -1,12 +1,12 @@
 #include "fft.h"
 
-static void permute_bitrev(float Are[IMAX], float Aim[IMAX])
+static void permute_bitrev(float Are[], float Aim[], int size)
 {
 	int i, bri;
 	int j, inp, rev = 0;
 	float t_re, t_im;
 
-	for (i = 0; i < IMAX; i++) {
+	for (i = 0; i < size; i++) {
 		inp = i;
 		rev = 0;
 		for (j = 0; j < 7; j++) {
@@ -27,8 +27,8 @@ static void permute_bitrev(float Are[IMAX], float Aim[IMAX])
 	}
 }
 
-static void fft(float A_re[IMAX], float A_im[IMAX], const float W_re[IMAX >> 1],
-		const float W_im[IMAX >> 1], int pp)
+static void fft(float A_re[], float A_im[], const float W_re[],
+		const float W_im[], int pp)
 {
 	float w_re, w_im, u_re, u_im, t_re, t_im;
 	int mm, g, b;
@@ -70,7 +70,7 @@ static void fft(float A_re[IMAX], float A_im[IMAX], const float W_re[IMAX >> 1],
 	}
 }
 
-static void fft1D(float Are[IMAX], float Aim[IMAX], int pp)
+static void fft1D(float Are[], float Aim[], int pp)
 {
 	const float Wre[] = {
 		1, 6.12323e-17, 0.707107, -0.707107,
@@ -119,10 +119,10 @@ static void fft1D(float Are[IMAX], float Aim[IMAX], int pp)
 			Wim[i] = Wim_c[i];
 	}
 	fft(Are, Aim, Wre, Wim, pp);
-	permute_bitrev(Are, Aim);
+	permute_bitrev(Are, Aim, IMAX);
 }
 
-void fft2D(float Are[IMAX][IMAX], float Aim[IMAX][IMAX], int pp)
+void fft2D(float Are[][], float Aim[][], int pp)
 {
 	int i, j;
 	float A1_re[IMAX], A1_im[IMAX];

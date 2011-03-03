@@ -3,6 +3,6 @@
 
 #include "registration.h"
 
-void fft2D(float Are[IMAX][IMAX], float Aim[IMAX][IMAX], int pp);
+void fft2D(float Are[][], float Aim[][], int pp);
 
 #endif
