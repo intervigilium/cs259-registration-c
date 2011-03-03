@@ -3,6 +3,6 @@
 
 #include "registration.h"
 
-void convolution2D(float Are[][]);
+void convolution2D(float Are[IMAX][IMAX]);
 
 #endif

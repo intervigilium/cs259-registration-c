@@ -10,18 +10,18 @@
 #define GAUSSIAN_STEP 3
 #define IMAX 128
 
-void V_cal(float V1[][][], float V2[][][],
-	   float V3[][][]);
+void V_cal(float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
+	   float V3[M + 1][N + 1][P + 1]);
 
-void U_cal(float U1[][][], float U2[][][], float U3[][][],
-	   float V1[][][], float V2[][][],
-	   float V3[][][]);
+void U_cal(float U1[M][N][P], float U2[M][N][P], float U3[M][N][P],
+	   float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
+	   float V3[M + 1][N + 1][P + 1]);
 
-void interp(float U1[][][], float U2[][][], float U3[][][],
-	    float interpT[][][], float T[][][]);
+void interp(float U1[M][N][P], float U2[M][N][P], float U3[M][N][P],
+	    float interpT[M][N][P], float T[M][N][P]);
 
-void computeMI(float V1[][][], float V2[][][],
-	       float V3[][][], float interpT[][][],
-	       float S[][][]);
+void computeMI(float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
+	       float V3[M + 1][N + 1][P + 1], float interpT[M][N][P],
+	       float S[M][N][P]);
 
 #endif

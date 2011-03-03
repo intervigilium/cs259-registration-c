@@ -3,8 +3,8 @@
 #include "registration.h"
 #include "convolution2d.h"
 
-void V_cal(float V1[][][], float V2[][][],
-	   float V3[][][])
+void V_cal(float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
+	   float V3[M + 1][N + 1][P + 1])
 {
 	int i, j, k;
 	float std = 4.5f;
@@ -183,8 +183,8 @@ void V_cal(float V1[][][], float V2[][][],
 
 }
 
-void interp(float U1[][][], float U2[][][], float U3[][][],
-	    float interpT[][][], float T[][][])
+void interp(float U1[M][N][P], float U2[M][N][P], float U3[M][N][P],
+	    float interpT[M][N][P], float T[M][N][P])
 {
 	int i, j, k;
 	for (i = 1; i < M - 1; i++)
@@ -233,9 +233,9 @@ void interp(float U1[][][], float U2[][][], float U3[][][],
 			}
 }
 
-void computeMI(float V1[][][], float V2[][][],
-	       float V3[][][], float interpT[][][],
-	       float S[][][])
+void computeMI(float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
+	       float V3[M + 1][N + 1][P + 1], float interpT[M][N][P],
+	       float S[M][N][P])
 {
 	int p1[IMAX];
 	int p2[IMAX];
@@ -313,9 +313,9 @@ void computeMI(float V1[][][], float V2[][][],
 	printf("MI is %f", MI / (M * N * P));
 }
 
-void U_cal(float U1[][][], float U2[][][], float U3[][][],
-	   float V1[][][], float V2[][][],
-	   float V3[][][])
+void U_cal(float U1[M][N][P], float U2[M][N][P], float U3[M][N][P],
+	   float V1[M + 1][N + 1][P + 1], float V2[M + 1][N + 1][P + 1],
+	   float V3[M + 1][N + 1][P + 1])
 {
 	int i, j, k;
 	float Rmax_L2 = 0.0;
