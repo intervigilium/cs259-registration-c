@@ -12,8 +12,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define EPS 1e-6f
-#define IMAX 128
 #define GAUSSIAN_STEP 3
 
 #define M 256
