@@ -42,21 +42,21 @@ int main(int argc, char **argv)
 	}
 
 	while ((c = getopt(argc, argv, "vhb:n:")) != -1) {
-                switch (c) {
-                        case 'v':
-                        case 'h':
-			case '?':
-			default:
-                                usage();
-                                return 0;
-                        case 'n':
-                                iterations = atoi(optarg);
-                                break;
-                        case 'b':
-				sscanf(optarg, "%u", &g_batchid);
-				break;
-                }
-        }
+		switch (c) {
+		case 'v':
+		case 'h':
+		case '?':
+		default:
+			usage();
+			return 0;
+		case 'n':
+			iterations = atoi(optarg);
+			break;
+		case 'b':
+			sscanf(optarg, "%u", &g_batchid);
+			break;
+		}
+	}
 
 	printf("Batch ID: %d\n", g_batchid);
 
